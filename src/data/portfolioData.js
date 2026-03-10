@@ -3,7 +3,7 @@ export const personalInfo = {
   tagline: "Front-End Developer & Top 2% on TryHackMe",
   subTagline: "Building digital experiences. Breaking things ethically.",
   email: "hammadnaeem160@gmail.com",
-  profilePhoto: "src/images/profile.jpg",
+  profilePhoto: "/images/profile.jpg",
   socials: {
     github: "https://github.com/Hammad-xureshi",
     linkedin: "https://www.linkedin.com/in/hammad-naeem-b5762a384/",
