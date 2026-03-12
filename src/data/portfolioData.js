@@ -221,6 +221,13 @@ export const certifications = [
     year: "2025",
     image: "/images/certificates/dsa-python.jpeg",
   },
+  {
+    id: 8,
+    name: "Guided Lab: File Upload Attacks",
+    issuer: "Hacksmarter",
+    year: "2026",
+    image: "/images/certificates/hacksmarter.jpg",
+  },
 
 ];
 
