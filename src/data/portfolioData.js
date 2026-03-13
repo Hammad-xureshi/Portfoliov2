@@ -4,6 +4,7 @@ export const personalInfo = {
   subTagline: "Building digital experiences. Breaking things ethically.",
   email: "hammadnaeem160@gmail.com",
   profilePhoto: "/images/profile.jpg",
+  resumeUrl: "/images/resume/Hammad_Naeem_Resume.pdf",
   socials: {
     github: "https://github.com/Hammad-xureshi",
     linkedin: "https://www.linkedin.com/in/hammad-naeem-b5762a384/",
@@ -176,21 +177,21 @@ export const certifications = [
     id: 1,
     name: "introduction to ICIP",
     issuer: "ICIP",
-    year: "2024",
+    year: "2025",
     image: "/images/certificates/introduction_to_cip.png",
   },
   {
     id: 2,
     name: "Password Cracking & Cryptography: John the Ripper & Hashcat",
     issuer: "Udemy",
-    year: "2024",
+    year: "2025",
     image: "/images/certificates/john-ripper-hashcat.jpg",
   },
   {
     id: 3,
     name: "Ethically Hack Human Mind — Social Engineering Fundamentals",
     issuer: "Udemy",
-    year: "2024",
+    year: "2025",
     image: "/images/certificates/social-engineering.jpg",
   },
   {

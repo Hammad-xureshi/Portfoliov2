@@ -146,7 +146,12 @@ export default function Hero() {
                 View My Work
                 <ArrowRight size={18} />
               </PrimaryButton>
-              <SecondaryButton>
+              <SecondaryButton
+                href={personalInfo.resumeUrl}
+                download="Hammad_Naeem_Resume.pdf"
+                target="_self"
+                ariaLabel="Download CV"
+              >
                 Download CV
                 <Download size={18} />
               </SecondaryButton>
