@@ -22,7 +22,7 @@ export default function TimelineItem({ item, index, isLast }) {
               }}
             >
               <div className="text-3xl mb-3">{item.icon}</div>
-              <h3 className="font-syne text-lg font-700 text-text-primary mb-1">
+              <h3 className="font-syne text-lg font-normal text-text-primary mb-1">
                 {item.title}
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed">
@@ -35,7 +35,7 @@ export default function TimelineItem({ item, index, isLast }) {
         {/* Center circle + line */}
         <div className="relative flex flex-col items-center z-10">
           <motion.div
-            className="w-14 h-14 rounded-full bg-purple-deep border-2 border-purple-bright flex items-center justify-center font-syne text-xs font-700 text-purple-bright shadow-lg"
+            className="w-14 h-14 rounded-full bg-purple-deep border-2 border-purple-bright flex items-center justify-center font-syne text-xs font-normal text-purple-bright shadow-lg"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -69,7 +69,7 @@ export default function TimelineItem({ item, index, isLast }) {
               }}
             >
               <div className="text-3xl mb-3">{item.icon}</div>
-              <h3 className="font-syne text-lg font-700 text-text-primary mb-1">
+              <h3 className="font-syne text-lg font-normal text-text-primary mb-1">
                 {item.title}
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed">
@@ -85,7 +85,7 @@ export default function TimelineItem({ item, index, isLast }) {
         {/* Left line + circle */}
         <div className="flex flex-col items-center">
           <motion.div
-            className="w-12 h-12 rounded-full bg-purple-deep border-2 border-purple-bright flex items-center justify-center font-syne text-[10px] font-700 text-purple-bright shrink-0"
+            className="w-12 h-12 rounded-full bg-purple-deep border-2 border-purple-bright flex items-center justify-center font-syne text-[10px] font-normal text-purple-bright shrink-0"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -108,7 +108,7 @@ export default function TimelineItem({ item, index, isLast }) {
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="text-2xl mb-2">{item.icon}</div>
-          <h3 className="font-syne text-base font-700 text-text-primary mb-1">
+          <h3 className="font-syne text-base font-normal text-text-primary mb-1">
             {item.title}
           </h3>
           <p className="text-text-secondary text-sm leading-relaxed">

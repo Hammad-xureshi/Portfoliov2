@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
-import GhostCursor from "../three/GhostCursor";
 import SectionHeading from "../ui/SectionHeading";
 import CTFCard from "../ui/CTFCard";
 import { ctfChallenges } from "../../data/portfolioData";
@@ -16,22 +15,6 @@ const staggerContainer = {
 export default function CTF() {
   return (
     <section id="ctf" className="relative section-padding">
-      {/* Ghost Cursor Background Effect - CTF Section */}
-      <div className="absolute inset-0 z-0 opacity-35">
-        <GhostCursor
-          color="#ef4444"
-          brightness={0.75}
-          trailLength={28}
-          inertia={0.52}
-          bloomStrength={0.55}
-          bloomRadius={0.85}
-          bloomThreshold={0.03}
-          grainIntensity={0.02}
-          fadeDelayMs={850}
-          fadeDurationMs={1450}
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionHeading
           title="CTF Journey"

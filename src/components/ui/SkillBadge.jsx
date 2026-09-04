@@ -4,8 +4,8 @@ export default function SkillBadge({ name }) {
   return (
     <motion.span
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-mono text-sm
-                 bg-bg-card border border-border-purple text-purple-glow
-                 hover:border-purple-bright/40 hover:bg-purple-deep/30
+                 bg-purple-deep/40 border border-border-purple text-purple-bright
+                 hover:border-purple-bright/40 hover:bg-purple-deep/60
                  transition-all duration-300 cursor-default select-none"
       variants={{
         hidden: { opacity: 0, scale: 0.7, y: 10 },

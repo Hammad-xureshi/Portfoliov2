@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiTryhackme } from "react-icons/si";
-import GhostCursor from "../three/GhostCursor";
 import { SubmitButton, SecondaryButton } from "../ui/Button";
 import SectionHeading from "../ui/SectionHeading";
 import { personalInfo } from "../../data/portfolioData";
@@ -56,6 +55,15 @@ export default function Contact() {
       return;
     }
     setErrors({});
+
+    const subject = encodeURIComponent(
+      `Portfolio message from ${formData.name}`
+    );
+    const body = encodeURIComponent(
+      `${formData.message}\n\n— ${formData.name}\n${formData.email}`
+    );
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
     setTimeout(() => setSubmitted(false), 4000);
@@ -71,22 +79,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative section-padding bg-bg-secondary">
-      {/* Ghost Cursor Background Effect - Contact Section */}
-      <div className="absolute inset-0 z-0 opacity-45">
-        <GhostCursor
-          color="#d946ef"
-          brightness={0.85}
-          trailLength={32}
-          inertia={0.48}
-          bloomStrength={0.6}
-          bloomRadius={0.95}
-          bloomThreshold={0.02}
-          grainIntensity={0.025}
-          fadeDelayMs={800}
-          fadeDurationMs={1300}
-        />
-      </div>
-
       <div className="relative z-10 max-w-4xl mx-auto">
         <SectionHeading
           title="Get In Touch"
@@ -156,7 +148,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-dm font-500 text-text-secondary mb-2"
+                  className="block text-sm font-dm font-normal text-text-secondary mb-2"
                 >
                   Name
                 </label>
@@ -166,7 +158,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-bg-primary border text-text-primary font-dm text-sm placeholder:text-text-muted focus:outline-none focus:border-purple-bright/50 focus:ring-1 focus:ring-purple-bright/30 transition-all duration-300 ${
+                  className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-text-primary font-dm text-sm placeholder:text-text-muted focus:outline-none focus:border-purple-bright/50 focus:ring-1 focus:ring-purple-bright/30 transition-all duration-300 ${
                     errors.name
                       ? "border-red-500/50"
                       : "border-border-purple"
@@ -182,7 +174,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-dm font-500 text-text-secondary mb-2"
+                  className="block text-sm font-dm font-normal text-text-secondary mb-2"
                 >
                   Email
                 </label>
@@ -192,7 +184,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-bg-primary border text-text-primary font-dm text-sm placeholder:text-text-muted focus:outline-none focus:border-purple-bright/50 focus:ring-1 focus:ring-purple-bright/30 transition-all duration-300 ${
+                  className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-text-primary font-dm text-sm placeholder:text-text-muted focus:outline-none focus:border-purple-bright/50 focus:ring-1 focus:ring-purple-bright/30 transition-all duration-300 ${
                     errors.email
                       ? "border-red-500/50"
                       : "border-border-purple"
@@ -208,7 +200,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-dm font-500 text-text-secondary mb-2"
+                  className="block text-sm font-dm font-normal text-text-secondary mb-2"
                 >
                   Message
                 </label>
@@ -231,11 +223,7 @@ export default function Contact() {
               </div>
 
               {/* Submit */}
-              <SubmitButton
-                disabled={Object.keys(errors).length > 0}
-                isLoading={false}
-                isSuccess={submitted}
-              >
+              <SubmitButton isSuccess={submitted}>
                 Send Message
                 <Send size={18} />
               </SubmitButton>
@@ -255,8 +243,8 @@ export default function Contact() {
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
             <CheckCircle size={20} className="text-green-400" />
-            <span className="text-text-primary font-dm text-sm font-500">
-              Message sent! 🚀
+            <span className="text-text-primary font-dm text-sm font-normal">
+              Opening your email client…
             </span>
           </motion.div>
         )}

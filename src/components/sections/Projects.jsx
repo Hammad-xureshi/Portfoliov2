@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import GhostCursor from "../three/GhostCursor";
 import SectionHeading from "../ui/SectionHeading";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/portfolioData";
@@ -18,22 +17,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative section-padding bg-bg-secondary">
-      {/* Ghost Cursor Background Effect - Projects Section */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <GhostCursor
-          color="#f59e0b"
-          brightness={0.7}
-          trailLength={30}
-          inertia={0.55}
-          bloomStrength={0.5}
-          bloomRadius={0.9}
-          bloomThreshold={0.05}
-          grainIntensity={0.01}
-          fadeDelayMs={900}
-          fadeDurationMs={1400}
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionHeading
           title="Projects"

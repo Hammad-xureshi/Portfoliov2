@@ -7,7 +7,6 @@ import {
   Wrench,
   Brain,
 } from "lucide-react";
-import GhostCursor from "../three/GhostCursor";
 import SectionHeading from "../ui/SectionHeading";
 import SkillBadge from "../ui/SkillBadge";
 import { skills } from "../../data/portfolioData";
@@ -32,22 +31,6 @@ const staggerContainer = {
 export default function Skills() {
   return (
     <section id="skills" className="relative section-padding">
-      {/* Ghost Cursor Background Effect - Skills Section */}
-      <div className="absolute inset-0 z-0 opacity-35">
-        <GhostCursor
-          color="#06b6d4"
-          brightness={0.65}
-          trailLength={22}
-          inertia={0.58}
-          bloomStrength={0.4}
-          bloomRadius={0.7}
-          bloomThreshold={0.08}
-          grainIntensity={0.015}
-          fadeDelayMs={750}
-          fadeDurationMs={1350}
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionHeading
           title="Skills & Technologies"
@@ -61,31 +44,20 @@ export default function Skills() {
             return (
               <motion.div
                 key={category.title}
-                className="glass-card rounded-2xl p-6 border-glow-hover transition-all duration-300"
+                className="glass-card rounded-2xl p-6 transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.5,
-                  delay: catIndex * 0.1,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                whileHover={{
-                  y: -4,
-                  boxShadow: "0 15px 40px rgba(168,85,247,0.12)",
-                }}
+                transition={{ duration: 0.5, delay: catIndex * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -4, boxShadow: "0 18px 40px rgba(124,58,237,0.10)" }}
               >
-                {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2.5 rounded-xl bg-purple-deep/60 border border-purple-bright/20">
-                    <Icon size={20} className="text-purple-bright" />
+                  <div className="p-2.5 rounded-xl bg-violet-50 border border-violet-200">
+                    <Icon size={20} className="text-violet-700" />
                   </div>
-                  <h3 className="font-syne text-lg font-700 text-text-primary">
-                    {category.title}
-                  </h3>
+                  <h3 className="font-syne text-lg font-normal text-slate-800">{category.title}</h3>
                 </div>
 
-                {/* Skill Badges */}
                 <motion.div
                   className="flex flex-wrap gap-2"
                   variants={staggerContainer}

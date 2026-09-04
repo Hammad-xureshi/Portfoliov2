@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const difficultyColors = {
-  Easy: "bg-green-500/15 text-green-400 border-green-500/30",
-  Medium: "bg-yellow-500/15 text-yellow-400 border-yellow-500/30",
-  Hard: "bg-red-500/15 text-red-400 border-red-500/30",
+  Easy: "bg-green-100 text-green-700 border-green-300",
+  Medium: "bg-amber-100 text-amber-700 border-amber-300",
+  Hard: "bg-red-100 text-red-700 border-red-300",
 };
 
 export default function CTFCard({ challenge }) {
@@ -12,65 +12,35 @@ export default function CTFCard({ challenge }) {
       className="group relative rounded-2xl overflow-hidden glass-card transition-all duration-500"
       variants={{
         hidden: { opacity: 0, y: 40 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
-        },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
       }}
-      whileHover={{
-        y: -6,
-        boxShadow: "0 20px 50px rgba(168,85,247,0.2)",
-        borderColor: "rgba(168, 85, 247, 0.35)",
-      }}
+      whileHover={{ y: -6, boxShadow: "0 20px 48px rgba(124,58,237,0.12)", borderColor: "rgba(124,58,237,0.25)" }}
     >
-      {/* Image */}
       <div className="relative h-40 md:h-48 overflow-hidden">
-        {/* IMAGE: ctf-{challenge.id} */}
         <img
-          src={
-            challenge.image ||
-            `https://placehold.co/800x400/0f0f1a/a855f7?text=${encodeURIComponent(challenge.title)}`
-          }
+          src={challenge.image || `https://placehold.co/800x400/f3e8ff/7c3aed?text=${encodeURIComponent(challenge.title)}`}
           alt={challenge.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-white/5 to-transparent" />
 
-        {/* Badges */}
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="px-3 py-1 rounded-full text-xs font-dm font-600 bg-purple-mid/80 text-white backdrop-blur-sm">
-            {challenge.platform}
-          </span>
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-dm font-600 border backdrop-blur-sm ${difficultyColors[challenge.difficulty]}`}
-          >
+          <span className="px-3 py-1 rounded-full text-xs font-dm font-medium bg-white/85 text-violet-700 border border-violet-200 backdrop-blur-sm">{challenge.platform}</span>
+          <span className={`px-3 py-1 rounded-full text-xs font-dm font-medium border backdrop-blur-sm ${difficultyColors[challenge.difficulty]}`}>
             {challenge.difficulty}
           </span>
         </div>
 
-        <div className="absolute top-4 right-4 px-2 py-1 rounded-md text-xs font-mono text-text-muted bg-bg-primary/60 backdrop-blur-sm">
-          {challenge.year}
-        </div>
+        <div className="absolute top-4 right-4 px-2 py-1 rounded-md text-xs font-mono text-slate-700 bg-white/80 backdrop-blur-sm border border-violet-200">{challenge.year}</div>
       </div>
 
-      {/* Content */}
       <div className="p-5 md:p-6">
-        <h3 className="font-syne text-lg font-700 text-text-primary mb-2 group-hover:text-purple-bright transition-colors duration-300">
-          {challenge.title}
-        </h3>
-        <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">
-          {challenge.description}
-        </p>
+        <h3 className="font-syne text-lg font-normal text-slate-900 mb-2 group-hover:text-violet-700 transition-colors duration-300">{challenge.title}</h3>
+        <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-2">{challenge.description}</p>
 
         <div className="flex flex-wrap gap-2">
           {challenge.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-1 text-xs font-mono rounded-md bg-purple-deep/50 text-purple-glow border border-border-purple"
-            >
-              {tag}
-            </span>
+            <span key={tag} className="px-2.5 py-1 text-xs font-mono rounded-md bg-violet-50 text-violet-700 border border-violet-200">{tag}</span>
           ))}
         </div>
       </div>

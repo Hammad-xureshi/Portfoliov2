@@ -10,51 +10,47 @@ import CTF from "./components/sections/CTF";
 import Journey from "./components/sections/Journey";
 import Certifications from "./components/sections/Certifications";
 import Contact from "./components/sections/Contact";
-import GhostCursor from "./components/three/GhostCursor";
 
 export default function App() {
   // Initialize Lenis smooth scroll
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile =
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 767px)").matches;
+
+    if (prefersReducedMotion || isMobile) return undefined;
+
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0.45,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
       smooth: true,
       smoothTouch: false,
     });
 
+    window.__lenis = lenis;
+
+    let animationFrame;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrame = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    animationFrame = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(animationFrame);
+      window.__lenis = undefined;
       lenis.destroy();
     };
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden">
-      {/* Global Ghost Cursor Effect */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <Suspense fallback={null}>
-          <GhostCursor
-            color="#a855f7"
-            brightness={0.8}
-            trailLength={35}
-            inertia={0.45}
-            bloomStrength={0.4}
-            bloomRadius={0.8}
-            bloomThreshold={0}
-            grainIntensity={0.03}
-            fadeDelayMs={1200}
-            fadeDurationMs={1800}
-            className="opacity-40"
-          />
-        </Suspense>
-      </div>
-
+    <div className="ambient-shell relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden">
+      <div className="pointer-events-none fixed inset-0 bg-grid opacity-20" />
+      <div className="pointer-events-none fixed inset-x-0 top-0 h-64 bg-gradient-to-b from-violet-500/5 to-transparent" />
       <Navbar />
 
       <main className="relative z-10">

@@ -1,25 +1,25 @@
 export const personalInfo = {
   name: "Hammad Naeem",
-  tagline: "Front-End Developer & Top 2% on TryHackMe",
-  subTagline: "Building digital experiences. Breaking things ethically.",
+  tagline: "Founder & CEO at NineByte Security | Top 2% on TryHackMe",
+  subTagline: "Securing systems. Building communities. Breaking things ethically.",
   email: "hammadnaeem160@gmail.com",
-  profilePhoto: "/images/profile.jpg",
+  profilePhoto: "/images/Firefly.png",
   resumeUrl: "/images/resume/Hammad_Naeem_Resume.pdf",
   socials: {
     github: "https://github.com/Hammad-xureshi",
     linkedin: "https://www.linkedin.com/in/hammad-naeem-b5762a384/",
-    instagram: "https://www.instagram.com/hammad__qureshi110/#",
+    instagram: "https://www.instagram.com/hammad__qureshi110/",
     tryhackme: "https://tryhackme.com/p/HammadNaeem",
   },
 };
 
-export const aboutText = `I am a Cyber Security student at QUEST University, passionate about ethical hacking, red teaming, and building secure systems. My focus is on Python automation, AI-based tools, and real-time security monitoring systems. I have developed intelligent systems such as AI Document Studio and CyberWall Security Dashboard by combining Python, Machine Learning, and backend development. My work revolves around building practical, real-world solutions that enhance digital security. I am continuously exploring new areas like penetration testing, network analysis, security automation, and AI-driven threat detection through online courses and hands-on projects.`;
+export const aboutText = `Founder & CEO of NineByte Security — a Pakistani cybersecurity organization built from the ground up. BS Cybersecurity student at QUEST Nawabshah, active bug bounty hunter on Bugcrowd and HackerOne, and Top 2% on TryHackMe with 200+ rooms completed. I organize NineByte CTF, an annual capture-the-flag competition, and build security tools and platforms using React, Next.js, Python, and AI. My work spans ethical hacking, frontend development, security research, and community building in Pakistan's infosec space.`;
 
 export const stats = [
-  { label: "Projects Built", value: 5, icon: "🚀", suffix: "+" },
-  { label: "CTFs Completed", value: 2, icon: "🛡️", suffix: "+" },
-  { label: "Certifications", value: 8, icon: "📜", suffix: "+" },
-  { label: "Technologies", value: 25, icon: "⚡", suffix: "+" },
+  { label: "Projects Built", value: 10, icon: "rocket", suffix: "+" },
+  { label: "Bug Bounty Programs", value: 10, icon: "shield", suffix: "+" },
+  { label: "Certifications", value: 8, icon: "award", suffix: "+" },
+  { label: "THM Rooms", value: 200, icon: "zap", suffix: "+" },
 ];
 
 export const skills = {
@@ -41,7 +41,7 @@ export const skills = {
   cybersecurity: {
     title: "Cybersecurity",
     icon: "shield",
-    items: ["Kali Linux", "Ethical Hacking", "OSINT", "Network Security", "Penetration Testing", "Bug Bounty", "Burp Suite", "Wireshark"],
+    items: ["Kali Linux", "Ethical Hacking", "OSINT", "Network Security", "Penetration Testing", "Bug Bounty", "Burp Suite", "Wireshark", "Bugcrowd", "HackerOne"],
   },
   tools: {
     title: "Tools",
@@ -108,31 +108,6 @@ export const projects = [
   },
 ];
 
-export const ctfChallenges = [
-  {
-    id: 1,
-    title: "QUEST CTF 2026 — Team: NINE-ELEVEN",
-    platform: "CTFtime",
-    description:
-      "Securing 2nd position in an inter-universities CTF competition has motivated us to further strengthen our skills and actively participate in future cybersecurity challenges.",
-    image: "/images/ctf/ctf.jpeg",
-    tags: ["SQL Injection", "Web", "OSINT", "OWASP"],
-    difficulty: "Easy",
-    year: "2026",
-  },
-  {
-    id: 2,
-    title: "ATC Winter 2026 CTF — Cipher Squad Leader",
-    platform: "CTFtime",
-    description:
-      "Mastered high-pressure problem solving and strategic coordination. Successfully bypassed complex security layers while leading the Cipher Squad team to secure a global ranking.",
-    image: "/images/ctf/atc-ctf1.jpeg",
-    tags: ["Web", "SQL Injection", "OSINT", "OWASP"],
-    difficulty: "Medium",
-    year: "2026",
-  },
-];
-
 export const journey = [
   {
     year: "2020",
@@ -147,21 +122,27 @@ export const journey = [
     icon: "📚",
   },
   {
-    year: "2024",
-    title: "BS Cyber Security — QUEST University",
-    description: "Started BS in Cyber Security at QUEST University — learning, building, and breaking things ethically.",
-    icon: "🏛️",
-  },
-  {
     year: "2023",
     title: "First Projects & CTFs",
     description: "Built first real-world projects, completed 8+ Udemy courses, and started solving CTF challenges.",
     icon: "💻",
   },
   {
+    year: "2024",
+    title: "BS Cyber Security — QUEST University",
+    description: "Started BS in Cyber Security at QUEST University — learning, building, and breaking things ethically.",
+    icon: "🏛️",
+  },
+  {
+    year: "2025",
+    title: "Founded NineByte Security",
+    description: "Launched NineByte Security — a Pakistani cybersecurity organization. Started bug bounty hunting on Bugcrowd and HackerOne.",
+    icon: "🚀",
+  },
+  {
     year: "2026",
-    title: "CTF Wins & AI Focus",
-    description: "Secured 2nd place in QUEST Inter-University CTF, led Cipher Squad at ATC Winter 2026, and built AI-powered security tools.",
+    title: "CTF Wins & NineByte CTF",
+    description: "Organized first NineByte CTF with 7 sponsors. Secured 2nd place in QUEST Inter-University CTF, led Cipher Squad at ATC Winter 2026, and built AI-powered security tools.",
     icon: "🤖",
   },
   {
@@ -172,10 +153,46 @@ export const journey = [
   },
 ];
 
+export const ctfChallenges = [
+  {
+    id: 1,
+    title: "NineByte CTF — Organizer & Platform Builder",
+    platform: "Annual CTF",
+    description:
+      "Founded and organized NineByte CTF, built the CTF platform in-house using Next.js + Supabase. Partnered with sponsors including Hackviser, TryHackMe, The XSS Rat, Blackbyt3, AIRvanguard, and The Arzens.",
+    image: "/images/ctf/ctf.jpeg",
+    tags: ["CTF Organization", "Web", "Community", "Platform Building"],
+    difficulty: "Hard",
+    year: "2026",
+  },
+  {
+    id: 2,
+    title: "QUEST CTF 2026 — Team: NINE-ELEVEN",
+    platform: "CTFtime",
+    description:
+      "Securing 2nd position in an inter-universities CTF competition has motivated us to further strengthen our skills and actively participate in future cybersecurity challenges.",
+    image: "/images/ctf/ctf.jpeg",
+    tags: ["SQL Injection", "Web", "OSINT", "OWASP"],
+    difficulty: "Easy",
+    year: "2026",
+  },
+  {
+    id: 3,
+    title: "ATC Winter 2026 CTF — Cipher Squad Leader",
+    platform: "CTFtime",
+    description:
+      "Mastered high-pressure problem solving and strategic coordination. Successfully bypassed complex security layers while leading the Cipher Squad team to secure a global ranking.",
+    image: "/images/ctf/atc-ctf1.jpeg",
+    tags: ["Web", "SQL Injection", "OSINT", "OWASP"],
+    difficulty: "Medium",
+    year: "2026",
+  },
+];
+
 export const certifications = [
   {
     id: 1,
-    name: "introduction to ICIP",
+    name: "Introduction to ICIP",
     issuer: "ICIP",
     year: "2025",
     image: "/images/certificates/introduction_to_cip.png",

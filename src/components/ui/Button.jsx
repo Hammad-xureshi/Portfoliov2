@@ -34,13 +34,13 @@ function injectKeyframes() {
    Design tokens
    ───────────────────────────────────────────── */
 const TOKENS = {
-  primary: '#a855f7',
-  secondary: '#6b21a8',
-  accent: '#ec4899',
-  bg: '#0a0a0f',
-  gradient: 'linear-gradient(135deg, #6b21a8, #a855f7)',
-  glowShadow: '0 0 30px rgba(168,85,247,0.5)',
-  glowShadowStrong: '0 0 40px rgba(168,85,247,0.6), 0 0 80px rgba(168,85,247,0.2)',
+  primary: '#7c3aed',
+  secondary: '#5b21b6',
+  accent: '#db2777',
+  bg: '#ffffff',
+  gradient: 'linear-gradient(135deg, #6d28d9, #7c3aed)',
+  glowShadow: '0 0 30px rgba(124,58,237,0.45)',
+  glowShadowStrong: '0 0 40px rgba(124,58,237,0.5), 0 0 80px rgba(124,58,237,0.2)',
   cubicEase: [0.25, 0.1, 0.25, 1],
 };
 
@@ -235,7 +235,7 @@ export function PrimaryButton({
         'rounded-xl',
         'font-[Syne] font-semibold text-sm tracking-wide text-white',
         'select-none outline-none',
-        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]',
+        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
         'transition-shadow duration-300',
         className,
       ].join(' ')}
@@ -301,9 +301,9 @@ export function SecondaryButton({
         'rounded-xl',
         'font-[Syne] font-semibold text-sm tracking-wide',
         'select-none outline-none',
-        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]',
+        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
         'transition-all duration-300',
-        isHovered && !disabled ? 'text-white' : 'text-purple-400',
+        isHovered && !disabled ? 'text-white' : 'text-purple-600',
         className,
       ].join(' ')}
       {...magnetHandlers}
@@ -362,11 +362,11 @@ export function IconSocialButton({
         'relative inline-flex items-center justify-center',
         'w-12 h-12 min-w-[44px] min-h-[44px]',
         shape === 'circle' ? 'rounded-full' : 'rounded-xl',
-        'bg-white/5 backdrop-blur-md',
-        'border border-white/10',
-        'text-white/70 hover:text-white',
+        'bg-slate-100/80 backdrop-blur-md',
+        'border border-purple-200',
+        'text-slate-600 hover:text-purple-700',
         'select-none outline-none',
-        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]',
+        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
         'transition-colors duration-300',
         className,
       ].join(' ')}
@@ -477,7 +477,7 @@ export function SubmitButton({
         'rounded-xl',
         'font-[Syne] font-semibold text-sm tracking-wide text-white',
         'select-none outline-none',
-        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]',
+        'focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
         'transition-shadow duration-300',
         className,
       ].join(' ')}
